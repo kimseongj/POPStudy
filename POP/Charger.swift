@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Charger: Chargeable {
+    var maximumWattPerHour: WattPerHour
+    
+    func convert(chargeableWattPerHour: WattPerHour) -> WattPerHour {
+        return chargeableWattPerHour <= maximumWattPerHour ? chargeableWattPerHour : maximumWattPerHour
+    }
+}
